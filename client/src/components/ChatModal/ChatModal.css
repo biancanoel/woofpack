@@ -1,7 +1,12 @@
-#output {
+/* #output {
     border: solid 2px rgb(128, 125, 125);
     border-radius: 5px;
     height: 100px;
+} */
+
+#chat-window {
+    border: solid 2px rgb(128, 125, 125);
+    border-radius: 5px;
 }
 
 h6 {

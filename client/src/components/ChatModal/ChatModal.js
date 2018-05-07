@@ -8,7 +8,6 @@ var message;
 var btn;
 var output;
 var feedback;
-var username;
 var room = Math.random();
 
 class ChatModal extends React.Component {
@@ -41,16 +40,12 @@ class ChatModal extends React.Component {
         //When chat loads, join a chat room. 
         socket.emit('room', room);
 
-        //Whenever there is typing, send this info to the server. 
-        socket.emit("typing", { username: this.state.userName1 });
-
         //When typing feedback comes from server, display this to user
         socket.on("typing", (data) => {
             //add this info to state typing
             this.setState({
                 otherUsertyping: `${data.username} is typing`
-            })
-            // feedback.innerHTML = `<p> <em>${data.username} </em> is typing`
+            });
         });
     };
 
@@ -59,21 +54,27 @@ class ChatModal extends React.Component {
         this.setState({
             [name]: value
         });
+        //Whenever there is typing, send this info to the server. 
+        if (value !== "") {
+            socket.emit("typing", { username: this.state.userName1 });
+        } else {
+            socket.emit("typing", { username: "No one" });
+        }
+
+
     }
 
     handleSendChat = () => {
-        //Query DOM
-        message = document.getElementById('message');
-        btn = document.getElementById('send');
-        output = document.getElementById('output');
-        feedback = document.getElementById('feedback');
-        feedback.innerHTML = ' ';
-        room = 'abc123';
-        this.addChatDB(this.state.userName1, this.state.userName2, message.value)
+        //add to db
+        // this.addChatDB(this.state.userName1, this.state.userName2, message.value)
+
         //send chat to server
         socket.emit('chat', {
             message: this.state.draftChat,
             username: this.state.userName1
+        });
+        this.setState({
+            otherUsertyping: ""
         });
     };
 
@@ -101,15 +102,19 @@ class ChatModal extends React.Component {
                                             <div id="article-chat">
                                                 <div id="chat-window">
                                                     <h6>Messages </h6>
+
                                                     {this.state.oldChat.map(chat => {
                                                         return (
-                                                            <div class="output"> {chat}
+                                                            <div class="output" key={Math.random()}> {chat}
                                                             </div>
                                                         )
                                                     })}
 
-                                                    <div id="feedback"> </div>
+                                                    <div id="feedback"> <em> {this.state.otherUsertyping} </em> </div>
                                                 </div>
+
+    
+
 
                                                 <input id="message" name="draftChat" type="text" placeholder="Message" value={this.state.draftChat} onChange={this.handleInputChange} />
                                                 <button className="home-btn" id="send" onClick={this.handleSendChat}> Send </button>
