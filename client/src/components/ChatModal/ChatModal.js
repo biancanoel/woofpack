@@ -74,7 +74,8 @@ class ChatModal extends React.Component {
             username: this.state.userName1
         });
         this.setState({
-            otherUsertyping: ""
+            otherUsertyping: "",
+            draftChat: ""
         });
     };
 
@@ -115,9 +116,11 @@ class ChatModal extends React.Component {
 
     
 
-
-                                                <input id="message" name="draftChat" type="text" placeholder="Message" value={this.state.draftChat} onChange={this.handleInputChange} />
+                                                <div className ="input-field col s12">    
+                                                <i class="material-icons prefix">chat</i>
+                                                <input id="message" name="draftChat" type="text" placeholder="Type Message Here" value={this.state.draftChat} onChange={this.handleInputChange} />
                                                 <button className="home-btn" id="send" onClick={this.handleSendChat}> Send </button>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
