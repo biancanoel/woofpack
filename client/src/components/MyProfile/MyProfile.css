@@ -15,7 +15,6 @@ button.waves-effect.waves-light.btn {
 }
 
 #aboutMeDiv {
-<<<<<<< HEAD
     overflow-y: auto;
 }
 
@@ -25,7 +24,4 @@ button.waves-effect.waves-light.btn {
     border-radius: 5px;
     border: solid 2px rgba(5, 112, 173, 0.562);
     color: rgba(5, 112, 173, 0.562);
-=======
-    overflow-x: auto;
->>>>>>> card-styling
 }
