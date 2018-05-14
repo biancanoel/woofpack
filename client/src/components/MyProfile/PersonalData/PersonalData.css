@@ -1,14 +1,20 @@
-#home-icon {
+/* #home-icon {
     padding-left: 10px;
-}
+} */
 
 .responsive-img.user-profile-image {
     width: auto;
     max-height: 300px;
 }
 
-#firstName,#lastName,#phone,#address,#aboutMe{
+#firstName,#lastName,#phone,#aboutMe{
     font-size: 20px;
+    margin-left:3%!important;
+}
+
+#address {
+    font-size: 20px;
+    margin-left: 1%!important;
 }
 
 .input-field.inline {
@@ -52,10 +58,10 @@ input:not([type]), input[type=text]:not(.browser-default), input[type=password]:
     text-align: center;
 }
 
-.profile-text {
+.input-field.profile-text {
     display: inline;
     color: rgba(5, 112, 173, 0.562);
-    margin-left:3%!important;
+    /* margin-left:3%!important; */
 }
 
 input {
@@ -66,3 +72,7 @@ input {
     z-index: 0;
     background-color: rgba(5, 112, 173, 0.562)!important;
 }
+
+/* .validate.profile-text {
+    margin-left:5%!important;
+} */

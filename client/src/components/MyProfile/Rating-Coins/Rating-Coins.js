@@ -12,11 +12,12 @@ const RatingCoins = (props) => {
 
     return (
         <div className="row">
-            <div className="col s2">
+            <div className="col s12 m2">
             </div>
-            <div className="col s4">
-                <div className="profile-card rating-coins card-panel grey lighten-5 z-depth-1">
-                    <div className="row valign-wrapper">
+            <div className="col s12 m4">
+                <div className="profile-card rating-coins card-panel grey lighten-5 z-depth-1" id="rating-div">
+                    {/* <div className="row valign-wrapper"> */}
+                    <div className="row">
                         <div className="col s2">
                             <i class="material-icons profile-text">stars</i>
                         </div>
@@ -36,9 +37,10 @@ const RatingCoins = (props) => {
                     </div>
                 </div>
             </div>
-            <div className="col s4">
+            <div className="col s12 m4">
                 <div className="profile-card rating-coins card-panel grey lighten-5 z-depth-1" id="coin-div">
-                    <div className="row valign-wrapper">
+                    {/* <div className="row valign-wrapper"> */}
+                    <div className="row">
                         <div className="col s2">
                             <i class="material-icons" >monetization_on</i>
                         </div>
@@ -50,7 +52,7 @@ const RatingCoins = (props) => {
                     </div>
                 </div>
             </div>
-            <div className="col s2">
+            <div className="col s12 m2">
             </div>
         </div>
     )
