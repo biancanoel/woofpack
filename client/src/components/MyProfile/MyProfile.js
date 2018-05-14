@@ -6,37 +6,16 @@ import API from '../../utils/API.js'
 import AddDogModal from "../AddDogModal";
 import "./MyProfile.css";
 import Calendar from "../Calendar";
-import moment from 'moment';
-import DatePicker from 'react-datepicker';
-import 'react-datepicker/dist/react-datepicker.css';
+
 
 class MyProfile extends Component {
-    constructor(props) {
-        super(props)
-        this.state = {
+    
+    state = {
             user: "",
             addDogOpen: false,
             dogs: [],
-            startDate: moment(),
-            endDate: ""
+        
         };
-        this.handleChangeStart = this.handleChangeStart.bind(this);
-        this.handleChangeEnd = this.handleChangeEnd.bind(this);
-    }
-
-    
-
-    handleChangeStart(date) {
-        this.setState({
-          startDate: date
-        })
-      };
-
-      handleChangeEnd(date) {
-        this.setState({
-          endDate: date
-        })
-      };
 
     componentDidMount() {
         this.loadUser();
@@ -98,21 +77,8 @@ class MyProfile extends Component {
                             size={dog.size} />
                     )
                 })}
-                <DatePicker
-                    selected={this.state.startDate}
-                    selectsStart
-                    startDate={this.state.startDate}
-                    endDate={this.state.endDate}
-                    onChange={this.handleChangeStart}
-                />
 
-                <DatePicker
-                    selected={this.state.endDate}
-                    selectsEnd
-                    startDate={this.state.startDate}
-                    endDate={this.state.endDate}
-                    onChange={this.handleChangeEnd}
-                />
+                <Calendar/>
             </div>
         )
     }

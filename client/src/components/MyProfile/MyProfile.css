@@ -13,3 +13,11 @@ button.waves-effect.waves-light.btn {
 #aboutMeDiv {
     overflow-y: auto;
 }
+
+.calendar-container {
+    /* width: 40%;
+    background: rgb(102, 101, 101); */
+    border-radius: 5px;
+    border: solid 2px rgba(5, 112, 173, 0.562);
+    color: rgba(5, 112, 173, 0.562);
+}
