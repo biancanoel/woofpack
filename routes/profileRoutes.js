@@ -19,12 +19,13 @@ var multerConf = {
     fileFilter: function (req, file, next) {
         if (!file) {
             next();
+            
         }
         const image = file.mimetype.startsWith('image/');
         if (image) {
             next(null, true);
         } else {
-            next({ message: "file type not supported" }, false)
+            next({ message: "file type not supported" }, false);
         }
     }
 }

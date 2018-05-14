@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "./PersonalData.css";
 
+
 class PersonalData extends Component {
     constructor(props) {
         super(props);
@@ -66,6 +67,7 @@ class PersonalData extends Component {
                         </div>
                     </div>
                 </div>
+                
             </div>
         )
     }
