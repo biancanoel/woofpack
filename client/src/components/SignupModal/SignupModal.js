@@ -37,6 +37,34 @@ class Modal extends Component {
     }
 
     onSubmit = (event) => {
+        
+        console.log("check ",this.state.about);
+        if(this.state.firstname === "" ){
+            alert("Please enter the FirstName")
+        }
+        if(this.state.lastname === "" ){
+            alert("Please enter the Lastname")
+        }
+        if(this.state.address === "" ){
+            alert("Please enter the Address")
+        }
+        if(isNaN(this.state.phone )){
+            alert("Please enter a valid Phone Number")
+        }
+        console.log("ph nu",this.state.phone )
+        if(this.state.about === "" ){
+            alert("Please enter the About You")
+        }
+        if(this.state.email === "" ){
+            alert("Please enter the Email Address")
+        }
+        if(this.state.username === "" ){
+            alert("Please enter the UserName")
+        }
+        if(this.state.avatar === "" ){
+            alert("Please add a picture")
+        }
+
         event.preventDefault();
         const { firstname, lastname, address, phone, about, username, email, password, avatar } = this.state;
         let formData = new FormData();
