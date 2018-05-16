@@ -2,6 +2,8 @@ import React from "react";
 import moment from 'moment';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
+import API from "../../utils/API.js";
+
 
 
 class Calendar extends React.Component {
@@ -15,20 +17,26 @@ class Calendar extends React.Component {
 
         this.handleChangeStart = this.handleChangeStart.bind(this);
         this.handleChangeEnd = this.handleChangeEnd.bind(this);
+        this.saveDates = this.saveDates.bind(this);
     };
 
     handleChangeStart(date) {
         this.setState({
             startDate: date
         });
-        console.log(`the start date is ${date}`)
     };
 
     handleChangeEnd(date) {
         this.setState({
             endDate: date
         });
-        console.log(`the end date is ${date}`)
+    };
+
+    saveDates() {
+        console.log('save dates');
+        console.log(typeof this.state.startDate.toDate());
+        console.log(`the start date is ${this.state.startDate.toDate()} and the end date is ${this.state.endDate}`)
+        // API.saveDates(this.state.startDate, this.state.endDate);
     };
 
 
@@ -57,6 +65,8 @@ class Calendar extends React.Component {
                     onChange={this.handleChangeEnd}
                 />
                 </span>
+
+                <button className="waves-effect waves-light btn .home-btn" onClick={this.saveDates} > Save Dates </button>
 
             </div>
         )
