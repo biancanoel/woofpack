@@ -108,3 +108,9 @@
     padding: 2%;
     color: white;      
 }
+
+.dates {
+    font-size: 150%;
+    font-weight: 200;
+    color: rgba(5, 112, 173, 0.562);
+}
