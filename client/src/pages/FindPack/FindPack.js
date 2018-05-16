@@ -48,6 +48,8 @@ class FindPack extends Component {
                         token={user.token}
                         dogCoin={user.dogCoin}
                         dog={user.dog}
+                        startDate={user.startDate}
+                        endDate={user.endDate}
                     />
                 ))}
             </div>
