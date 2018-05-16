@@ -7,8 +7,8 @@ var ObjectId = require('mongodb').ObjectId;
 var multerConf = {
     storage: multer.diskStorage({
         destination: function (req, file, next) {
-            //next(null, './client/build/uploads')
-            next(null, './client/public/uploads')
+            next(null, './client/build/uploads')
+            // next(null, './client/public/uploads')
 
         },
         filename: function (req, file, next) {
@@ -45,8 +45,8 @@ module.exports = function (app) {
             username: req.body.username,
             email: req.body.email,
             password: req.body.password,
-           // picture: req.file.path.replace("client/build/", ""),
-            picture: req.file.path.replace("client/public/", ""),
+           picture: req.file.path.replace("client/build/", ""),
+            // picture: req.file.path.replace("client/public/", ""),
             myPack: req.body.myPack, 
             dogCoin: 0
         })
@@ -75,8 +75,8 @@ module.exports = function (app) {
             temperment: req.body.temperment,
             size: req.body.size,
             aboutDog: req.body.aboutDog,
-            //picture: req.file.path.replace("client/build/", "")
-            picture: req.file.path.replace("client/public/", "")
+            picture: req.file.path.replace("client/build/", "")
+            // picture: req.file.path.replace("client/public/", "")
         }).then(function (data) {
             db.Profile.findOneAndUpdate({
                 _id: req.session.user.id
