@@ -15,7 +15,7 @@ button.waves-effect.waves-light.btn {
 }
 
 #aboutMeDiv {
-    overflow-y: auto;
+    overflow-ys: auto;
 }
 
 .calendar-container {

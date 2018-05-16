@@ -2,6 +2,7 @@ img {
   width: 93.5%;
   height: auto;
   opacity: .8;
+  border-radius: 3%;
   box-shadow: 7px 8px 10px grey;
 }
 
@@ -31,6 +32,7 @@ img.circle {
   width: 35%;
   height: 35%;
   opacity: .9;
+  border-radius: 25%;
 }
 
 #sidenav_0 {

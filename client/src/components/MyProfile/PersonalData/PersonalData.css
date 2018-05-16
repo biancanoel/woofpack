@@ -5,6 +5,7 @@
 .responsive-img.user-profile-image {
     width: auto;
     max-height: 300px;
+    border-radius: 3%;
 }
 
 #firstName,#lastName,#phone,#aboutMe{

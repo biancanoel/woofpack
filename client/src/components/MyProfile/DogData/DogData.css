@@ -32,4 +32,5 @@
 .responsive-img.dog-image {
     width: auto;
     max-height: 300px;
+    border-radius: 3%;
 }

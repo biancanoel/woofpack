@@ -75,7 +75,7 @@ class Card extends Component {
             <Roww >
                 <Col className="card-box" size="md-6">
                     {this.state.showcard === true ?
-                        <div className="card-panel" >
+                        <div className="card-panel grey lighten-5 z-depth-1" >
                             <Roww>
                                 <Col size="md-2">
                                     <div className="card" id="user-card">
@@ -141,8 +141,8 @@ class Card extends Component {
                                                 <div className="card-reveal">
                                                     <span className="card-title grey-text text-darken-4">Dog Info<i className="small material-icons right">cancel</i></span>
                                                     <br />
-                                                    <span><b>About this doggo</b></span>
-                                                    <br />
+                                                    {/* <span><b>About this doggo</b></span>
+                                                    <br /> */}
                                                     <span><b>Breed: </b>{this.state.dogs[0].breed}</span>
                                                     <br />
                                                     <span><b>Age: </b>{this.state.dogs[0].age}</span>

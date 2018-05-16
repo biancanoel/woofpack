@@ -14,6 +14,7 @@ import API from './utils/API.js'
 import "./App.css";
 import Sidebar from "./components/Sidebar";
 import Favicon from 'react-favicon';
+import Footer from "./components/Footer";
 
 class App extends Component {
    state = {
@@ -71,6 +72,7 @@ class App extends Component {
           </Wrapper>
         </div>
       </Router>
+      {/* <Footer/> */}
       </div>
     )
   }
