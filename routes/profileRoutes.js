@@ -211,5 +211,13 @@ module.exports = function (app) {
 
     app.post('/api/savedates', function (req, res){
         console.log(req.body);
+        var o_id= new Object(req.session.user.id);
+        db.Profile.findOneAndUpdate({
+            _id:o_id}, {startDate: req.body.startdate,
+            endDate: req.body.enddate}).
+        then(function (data){
+            console.log(data);
+            res.end();
+        }).catch(err => res.status(422).json(err));
     })
 };

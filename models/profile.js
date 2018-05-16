@@ -52,10 +52,10 @@ const profileSchema = new Schema({
     ref: "Profile"
   }],
   startDate: {
-    type: Number
+    type: String
   },
   endDate: {
-    type: Number
+    type: String
   }
 });
 
