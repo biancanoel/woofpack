@@ -50,7 +50,13 @@ const profileSchema = new Schema({
   myPack: [{
     type: Schema.Types.ObjectId,
     ref: "Profile"
-  }]
+  }],
+  startDate: {
+    type: Number
+  },
+  endDate: {
+    type: Number
+  }
 });
 
 const Profile = mongoose.model("Profile", profileSchema);

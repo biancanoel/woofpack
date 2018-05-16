@@ -52,4 +52,8 @@ export default {
     newRating: function (rate){
         return axios.post('/api/rating', rate);
     },
+    saveDates: function (startdate, enddate) {
+        return axios.post('/api/savedates', startdate, enddate);
+    }
+ 
 }

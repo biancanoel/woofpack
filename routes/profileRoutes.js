@@ -181,7 +181,7 @@ module.exports = function (app) {
                 res.end();
             };
         });
-    })
+    });
 
     app.post("/api/sendcoin", function(req, res){
         console.log("api/sendcoin", req.body)
@@ -195,9 +195,9 @@ module.exports = function (app) {
             var o_id = new ObjectId(id);
             return db.Profile.update({_id: o_id}, {$inc:{dogCoin: - req.body.coinValue}}).then(function(result){
                 res.end(); 
-            })
-        })
-    })
+            });
+        });
+    });
 
     app.post('/api/rating', function (req, res){
         console.log("req.body.id ", req.body.id);
@@ -207,5 +207,9 @@ module.exports = function (app) {
             console.log("this is rating res.data", data);
             res.end();
         }).catch(err => res.status(422).json(err));
-    }) 
+    }); 
+
+    app.post('/api/savedates', function (req, res){
+        console.log(req.body);
+    })
 };
