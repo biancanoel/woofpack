@@ -85,7 +85,7 @@ class Card extends Component {
                         <div className="card-panel grey lighten-5 z-depth-1" >
                             <Row>
                                 <Col size="md-2">
-                                    <p> {this.state.userName1}'s Availability: <br/> <span className = "dates" >{this.props.startDate} - {this.props.endDate}</span> </p>
+                                    <p> {this.props.firstname}'s Availability: <br/> <span className = "dates" >{this.props.startDate} - {this.props.endDate}</span> </p>
                                 </Col>
                             </Row>
                             <Roww>
