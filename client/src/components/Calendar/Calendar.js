@@ -33,8 +33,9 @@ class Calendar extends React.Component {
     };
 
     saveDates() {
-        var starting = this.state.startDate.format();
-        var ending = this.state.endDate.format();
+        var starting = this.state.startDate.format("dddd, MMMM Do YYYY");
+        var ending = this.state.endDate.format("dddd, MMMM Do YYYY");
+        console.log(starting);
 
         API.saveDates({
             startdate: starting,

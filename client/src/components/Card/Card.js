@@ -6,7 +6,9 @@ import SendCoin from "./SendCoin"
 import "./Card.css";
 import { Input, Row } from "react-materialize"
 import API from "../../utils/API.js";
-import Ratings from "./Ratings"
+import Ratings from "./Ratings";
+import moment from 'moment';
+
 
 class Card extends Component {
     constructor(props) {
@@ -17,7 +19,9 @@ class Card extends Component {
             userName1: "",
             userName2: "",
             dogs: [],
-            showcard: true
+            showcard: true,
+            startDate: "",
+            endDate: ""
 
         }
     }
@@ -32,9 +36,12 @@ class Card extends Component {
             }
         });
 
+        var formatstart = 
+        console.log(formatstart);
         this.setState({
             userName2: this.props._id,
-            showcard: true
+            showcard: true,
+            startDate: formatstart
         })
 
     };
@@ -76,6 +83,11 @@ class Card extends Component {
                 <Col className="card-box" size="md-6">
                     {this.state.showcard === true ?
                         <div className="card-panel grey lighten-5 z-depth-1" >
+                            <Row>
+                                <Col size="md-2">
+                                    <p> I am available starting: {this.props.startDate} until {this.props.endDate} </p>
+                                </Col>
+                            </Row>
                             <Roww>
                                 <Col size="md-2">
                                     <div className="card" id="user-card">
@@ -169,6 +181,7 @@ class Card extends Component {
                                             : null}
                                         {this.props.cardtype === "mypack" ? <Ratings readonly={false} userRating={this.props.rating} id={this.props._id} />
                                             : null}
+
                                     </div>
                                 </Col>
                                 <Col size="md-2">
@@ -179,6 +192,7 @@ class Card extends Component {
                                             : null}
                                     </div>
                                 </Col>
+
                             </Row>
                             <Roww>
                                 <Col size="md-12">

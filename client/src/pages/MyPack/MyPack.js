@@ -48,11 +48,12 @@ class MyPack extends Component {
                             email={member.email}
                             picture={member.picture}
                             about={member.about}
-                            address={member.address}
                             username={member.username}
                             _id={member._id}
                             message={member.message}
                             rating={member.rating}
+                            startDate={member.startDate}
+                            endDate={member.endDate}
                         />
                     )
                 })}

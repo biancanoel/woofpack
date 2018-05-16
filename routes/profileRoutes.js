@@ -112,7 +112,9 @@ module.exports = function (app) {
                     email: data[0].email,
                     picture: data[0].picture,
                     username: data[0].username,
-                    myPack: data[0].myPack
+                    myPack: data[0].myPack,
+                    startDate: data[0].startDate,
+                    endDate: data[0].endDate
                 }
                 res.send(true)
             }

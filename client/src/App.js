@@ -22,7 +22,9 @@ class App extends Component {
         firstname: "", 
         email: "", 
         picture: "",
-        username: ""
+        username: "",
+        startDate: "",
+        endDate: ""
     };
 
   componentDidMount(){
@@ -37,7 +39,9 @@ class App extends Component {
         firstname: res.data.firstname, 
         email: res.data.email, 
         picture: res.data.picture,
-        username: res.data.username})
+        username: res.data.username,
+        startDate: res.data.startDate,
+        endDate: res.data.endDate})
       }
     })
   };
